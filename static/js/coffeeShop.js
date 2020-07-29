@@ -23,7 +23,7 @@ const incrementCartTotal = (price) => {
   let total = Number(cartTotal.html());
   total += price;
 
-  cartTotal.html(total.toFixed(2));
+  cartTotal.html(total.toFixed(2)); //number formatting 
 };
 
 
@@ -53,10 +53,11 @@ $('.add-to-order').on('click', () => {
   incrementCartTotal(1.50);
 });
 
+$('#place-order').on('click', () => {
+  incrementCoffeeSold($('#cart-items').children().length);
 
-// Questions:
-// when they want us to type the function name in the console make sure im doing it right
-// WHat is last line doing in incrementCartTotal
+  resetCart();
+});
 
 
 
